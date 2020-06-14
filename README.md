@@ -1,9 +1,11 @@
 # Python Algerian mobile phone number package
 
 This package provides several methods to deal with Algerian phone numbers.
-It can be used in your projects or to integrate it into your favorite python frameworks such as Django or Flask.
+
+The aim of this package is to create a python community in Algeria and provide all possible libraries to make python frameworks and projects such as Django or Flask adapted to Algerian market and easy to use.
 
 Inspired by the [PHP Package](https://github.com/cherifGsoul/php-algerian-mobile-phone-number) authored by Mohamed Cherif Bouchelaghem.
+
 ## Installation
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Python Algerian mobile phone number package.
 ```
@@ -13,104 +15,85 @@ pip install python_algerian_mobile_phone_number
 ## Usage:
 
 ### Instantiation:
-
-The class doesn't have a public constructor, it has a named constructor instead in order to preseve its invariants:
+Create an instance of the class AlgerianMobilePhoneNumber and pass the phone number value as an attribute
 
 ```python 
-import pythonAlgerianMobilePhoneNumber;
+import AlgerianMobilePhoneNumber
 
-$phoneNumber = AlgerianMobilePhoneNumber::fromString('0699000000');
+phoneNumber = AlgerianMobilePhoneNumber('0770000000')
 ```
 
 Or:
 
-```php
-use Cherif\AlgerianMobilePhoneNumber\AlgerianMobilePhoneNumber;
+```python 
+import AlgerianMobilePhoneNumber
 
-$phoneNumber = AlgerianMobilePhoneNumber::fromString('06 99 00 00 00');
+phoneNumber = AlgerianMobilePhoneNumber('07 70 00 00 00')
 ```
 
 Or:
 
-```php
-use Cherif\AlgerianMobilePhoneNumber\AlgerianMobilePhoneNumber;
+```python 
+import AlgerianMobilePhoneNumber
 
-$phoneNumber = AlgerianMobilePhoneNumber::fromString('06-99-00-00-00'); //
+phoneNumber = AlgerianMobilePhoneNumber('07-70-00-00-00')
 ```
-
-The value object class accepts international phone indicative, 00213 or +213, too.
 
 > __NOTE__: For now only space and dash "-" separated numbers are accepted.
+
+>__NOTE__: International phone indicative such 00213 or +213 are accepted.
 
 
 ### API:
 
-#### asString
+#### str
 
-To get the string value of the object:
+To get the string representation of the instance use the built in function __str\__:
 
-```php
-$phoneNumber->asString(); // -> '0699000000'
+```python
+phoneNumber.__str__() // -> '0770000000'
 ```
 
-#### equals
+#### equalsTo
 
-For comparaison check:
-```php
-$other = AlgerianMobilePhoneNumber::fromString('0699000000');
-$phoneNumber->equals($other); // -> true
+To compare two phone numbers:
+```python
+other = AlgerianMobilePhoneNumber('0770000000')
+phoneNumber.equalsTo(other) // -> True
 ```
 
 #### isMobilis, isDjezzy and isOoredoo
 
-To know if the object respresents a Mobilis, Djezzy or Ooredoo phone number
+To check the mobile phone number provider including Mobilis, Djezzy and Ooredoo
 
-```php
-$phoneNumber = AlgerianMobilePhoneNumber::fromString('0699000000');
-$phoneNumber->isMobilis(); // -> true
-$phoneNumber->isDjezzy(); // -> false
-$phoneNumber->isOoredoo(); // -> false
-```
-
-#### withNumber
-
-```php
-use Cherif\AlgerianMobilePhoneNumber\AlgerianMobilePhoneNumber;
-
-$phoneNumber = AlgerianMobilePhoneNumber::fromString('06-99-00-00-00');
-$phoneNumber->withNumber('07-99-00-00-00'); // Will return a new instance that represents the new number
-```
-
-
-#### __toString
-Casts the value object to string:
-```php
-$phoneNumber = AlgerianMobilePhoneNumber::fromString('0699000000');
-(string)$phoneNumber; // -> '0699000000'
+```python
+phoneNumber = AlgerianMobilePhoneNumber('0770000000');
+phoneNumber.isMobilis() // -> False
+phoneNumber.isDjezzy() // -> True
+phoneNumber.isOoredoo() // -> False
 ```
 
 ## Contribution
-Contributions are welcome to make this library better.
+Contributions are welcome to give the best of this package.
 
 - Clone the repo:
 
 ```shell
-$ git clone git@github.com:cherifGsoul/php-algerian-mobile-phone-number.git
+$ git clone git@github.com:mohamine18/python_algerian_mobile_phone_number.git
 ```
+- Enter the cloned repository directory.
 
-and enter to the cloned repository directory.
-
-- Install dependencies:
-
-```shell
-$ composer install
-```
 
 ### Testing:
-Run composer script for testing:
+- Install pytest:
 
 ```shell
-$ composer test
+$ pip install pytest
+```
+- Run test.py script for unit testing:
+
+```shell
+$ pytest test.py
 ```
 
 ## License
