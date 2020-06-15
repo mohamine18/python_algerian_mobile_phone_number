@@ -17,29 +17,28 @@ pip install python_algerian_mobile_phone_number
 ### Instantiation:
 Create an instance of the class AlgerianMobilePhoneNumber and pass the phone number value as an attribute
 
+- Import
 ```python 
-import AlgerianMobilePhoneNumber
+from python_algerian_mobile_phone_number.AlgerianMobilePhoneNumber import AlgerianMobilePhoneNumber
+```
 
+```python 
 phoneNumber = AlgerianMobilePhoneNumber('0770000000')
 ```
 
 Or:
 
 ```python 
-import AlgerianMobilePhoneNumber
-
 phoneNumber = AlgerianMobilePhoneNumber('07 70 00 00 00')
 ```
 
 Or:
 
 ```python 
-import AlgerianMobilePhoneNumber
-
 phoneNumber = AlgerianMobilePhoneNumber('07-70-00-00-00')
 ```
 
-> __NOTE__: For now only space and dash "-" separated numbers are accepted.
+> __NOTE__: For now only space and hyphens "-" separated numbers are accepted.
 
 >__NOTE__: International phone indicative such 00213 or +213 are accepted.
 
