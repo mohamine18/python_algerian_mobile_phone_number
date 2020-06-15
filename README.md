@@ -19,7 +19,7 @@ Create an instance of the class AlgerianMobilePhoneNumber and pass the phone num
 
 - Import
 ```python 
-from python_algerian_mobile_phone_number.AlgerianMobilePhoneNumber import AlgerianMobilePhoneNumber
+from python_algerian_mobile_phone_number import AlgerianMobilePhoneNumber
 ```
 
 ```python 
@@ -50,7 +50,7 @@ phoneNumber = AlgerianMobilePhoneNumber('07-70-00-00-00')
 To get the string representation of the instance use the built in function __str\__:
 
 ```python
-phoneNumber.__str__() // -> '0770000000'
+phoneNumber.__str__() #'0770000000'
 ```
 
 #### equalsTo
@@ -58,7 +58,7 @@ phoneNumber.__str__() // -> '0770000000'
 To compare two phone numbers:
 ```python
 other = AlgerianMobilePhoneNumber('0770000000')
-phoneNumber.equalsTo(other) // -> True
+phoneNumber.equalsTo(other) #True
 ```
 
 #### isMobilis, isDjezzy and isOoredoo
@@ -66,11 +66,38 @@ phoneNumber.equalsTo(other) // -> True
 To check the mobile phone number provider including Mobilis, Djezzy and Ooredoo
 
 ```python
-phoneNumber = AlgerianMobilePhoneNumber('0770000000');
-phoneNumber.isMobilis() // -> False
-phoneNumber.isDjezzy() // -> True
-phoneNumber.isOoredoo() // -> False
+phoneNumber = AlgerianMobilePhoneNumber('0770000000')
+phoneNumber.isMobilis() #False
+phoneNumber.isDjezzy()  #True
+phoneNumber.isOoredoo() #False
 ```
+
+#### changeNumber
+
+To change the phone number of an instance:
+```python
+phoneNumber = AlgerianMobilePhoneNumber('0770000000')
+phoneNumber.changeNumber('0798000000') #'0798000000'
+```
+
+#### convertToInternational
+
+The method takes one parameter named prefix -- values only '00' and '+'
+```python
+phoneNumber = AlgerianMobilePhoneNumber('0770000000')
+phoneNumber.convertToInternational()     #'00213770000000'
+phoneNumber.convertToInternational('00') #'00213770000000'
+phoneNumber.convertToInternational('+')  #'+213770000000'
+```
+
+#### convertToLocal
+
+The method convert the internaltionl number to local one. Accepts both '00213' and '+213'
+```python
+phoneNumber = AlgerianMobilePhoneNumber('00213770000000')
+phoneNumber.convertToLocal() #'0770000000'
+```
+>__NOTE__: convertToInternational and convertToLocal does not change the number instance so you can assign it to a variable. If you want to change the class instance use changeNumber instead to avoid mistakes.
 
 ## Contribution
 Contributions are welcome to give the best of this package.

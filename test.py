@@ -37,3 +37,27 @@ def test_equalsTo():
     for number in numbers:
         instance = AlgerianMobilePhoneNumber(number) 
         assert instance.equalsTo(other)
+
+def test_changeNumber():
+    numbers = ['0550000000','00213660000000','+213770000000']
+    for number in numbers:
+        instance = AlgerianMobilePhoneNumber(number)
+        assert instance.changeNumber('0798000000') == '0798000000'
+
+def test_convertToInternational():
+    numbers = ['0550000000','00213660000000','+213770000000']
+    number_00213 = ['00213550000000','00213660000000','00213770000000']
+    number_plus_213 = ['+213550000000','+213660000000','+213770000000']
+    for index, number in enumerate(numbers):
+        instance = AlgerianMobilePhoneNumber(number)
+        assert instance.convertToInternational('00') == number_00213[index] 
+    for index, number in enumerate(numbers):
+        instance = AlgerianMobilePhoneNumber(number)
+        assert instance.convertToInternational('+') == number_plus_213[index] 
+
+def test_convertToLocal():
+    numbers = ['0550000000','00213660000000','+213770000000']
+    number_local = ['0550000000','0660000000','0770000000']
+    for index, number in enumerate(numbers):
+        instance = AlgerianMobilePhoneNumber(number)
+        assert instance.convertToLocal() == number_local[index] 

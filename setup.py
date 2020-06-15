@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="python_algerian_mobile_phone_number",
-    version="0.1",
+    version="0.2",
     author="Mohammed Amine BOURAS",
     author_email="mohamine19@gmail.com",
     description="Algerian mobile phone number package",
