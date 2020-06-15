@@ -9,7 +9,7 @@ Inspired by the [PHP Package](https://github.com/cherifGsoul/php-algerian-mobile
 ## Installation
 Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Python Algerian mobile phone number package.
 ```
-pip install python_algerian_mobile_phone_number
+pip install python-algerian-mobile-phone-number
 ```
 
 ## Usage:
